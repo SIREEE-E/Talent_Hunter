@@ -1,0 +1,171 @@
+/* Feature Demo Styles */
+.auth-demo, .job-demo, .skill-demo, .matching-demo, .support-chat-demo, .shortlist-demo, .job-seeker-demo {
+    display: none;
+}
+.auth-demo.active, .job-demo.active, .skill-demo.active, 
+.matching-demo.active, .support-chat-demo.active, .shortlist-demo.active, .job-seeker-demo.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+.demo-form {
+    margin-top: 20px;
+}
+.demo-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    display: none;
+}
+.demo-result.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+.skill-test-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+.skill-option {
+    padding: 10px 15px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.skill-option:hover {
+    background-color: var(--light-color);
+}
+.skill-option.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+.matching-criteria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+.criteria-item {
+    flex: 1;
+    min-width: 200px;
+}
+.match-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    display: none;
+}
+.match-result.active {
+    display: block;
+}
+.match-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+.match-item:last-child {
+    border-bottom: none;
+}
+.match-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+    color: white;
+}
+.match-info {
+    flex: 1;
+}
+.match-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.match-skills {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+.match-score {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.proposal-template {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+.proposal-field {
+    margin-bottom: 15px;
+}
+.proposal-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+.proposal-field input, .proposal-field textarea {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+}
+.shortlist-container {
+    margin-top: 20px;
+}
+.shortlist-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+.shortlist-item:last-child {
+    border-bottom: none;
+}
+.shortlist-checkbox {
+    margin-right: 10px;
+}
+.shortlist-info {
+    flex: 1;
+}
+.shortlist-name {
+    font-weight: bold;
+}
+.shortlist-skills {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+.shortlist-actions {
+    display: flex;
+    gap: 10px;
+}
+.job-seeker-form {
+    margin-top: 20px;
+}
+.job-seeker-result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    display: none;
+}
+.job-seeker-result.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
