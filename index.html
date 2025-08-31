@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Hunter - AI-Powered Freelancer Matching</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/features.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-search"></i>
+                <span>Talent Hunter</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="features" id="features-nav" style="display: none;">Features</a></li>
+                    <li><a href="#" class="nav-link" data-page="jobs" id="jobs-nav" style="display: none;">Jobs</a></li>
+                    <li><a href="#" class="nav-link" data-page="freelancers" id="freelancers-nav" style="display: none;">Freelancers</a></li>
+                    <li><a href="#" class="nav-link" data-page="dashboard" id="dashboard-nav" style="display: none;">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" data-page="admin-dashboard" id="admin-nav" style="display: none;">Admin</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="btn btn-secondary" id="login-btn">Login</a>
+                <div class="user-profile" id="user-profile" style="display: none;">
+                    <span id="user-name"></span>
+                    <div class="profile-dropdown">
+                        <a href="#" id="profile-link">My Profile</a>
+                        <a href="#" id="logout-btn">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <div class="container">
+                    <h1>Connect Talent with Perfect Projects</h1>
+                    <p>Revolutionary AI-based skill assessment that matches freelancers with clients for optimal project success.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary btn-large" id="get-started-freelancer">Get Started as Freelancer</a>
+                        <a href="#" class="btn btn-secondary btn-large" id="post-project-btn">Post a Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="container">
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">10,000+</div>
+                            <div class="stat-label">Active Freelancers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Match Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features Page -->
+        <section id="features" class="page-section">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card" data-feature="job-posting">
+                        <div class="feature-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Smart Job Posting</h3>
+                        <p>AI-powered job recommendations and intelligent filtering for optimal visibility.</p>
+                        <div class="feature-details hidden">
+                            <h4>Job Posting Features:</h4>
+                            <ul>
+                                <li>AI-driven job description optimization</li>
+                                <li>Smart candidate matching</li>
+                                <li>Automated skill tagging</li>
+                                <li>Performance analytics</li>
+                            </ul>
+                            <button class="btn btn-primary feature-action">Create Sample Job</button>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-feature="job-matching">
+                        <div class="feature-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Fair Job Matching</h3>
+                        <p>Fairness-aware algorithms ensure balanced diversity and equitable job allocation.</p>
+                        <div class="feature-details hidden">
+                            <h4>Matching Features:</h4>
+                            <ul>
+                                <li>Bias detection algorithms</li>
+                                <li>Diversity optimization</li>
+                                <li>Transparent matching criteria</li>
+                                <li>Equitable opportunity distribution</li>
+                            </ul>
+                            <button class="btn btn-primary feature-action">Find Matches</button>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-feature="skill-assessment">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Skill Assessment</h3>
+                        <p>Dynamic and multilingual skill evaluation for better freelancer-job alignment.</p>
+                        <div class="feature-details hidden">
+                            <h4>Skill Assessment Features:</h4>
+                            <ul>
+                                <li>Adaptive testing algorithms</li>
+                                <li>Real-time skill verification</li>
+                                <li>Multi-language support</li>
+                                <li>Certification integration</li>
+                            </ul>
+                            <button class="btn btn-primary feature-action">Assess Skills</button>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-feature="support-chat">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Realtime Support Chat</h3>
+                        <p>AI chatbots and smart contracts enhance freelancer-client communication.</p>
+                        <div class="feature-details hidden">
+                            <h4>Support Features:</h4>
+                            <ul>
+                                <li>AI-powered chat assistance</li>
+                                <li>Video conferencing integration</li>
+                                <li>Smart contract automation</li>
+                                <li>Real-time translation</li>
+                            </ul>
+                            <button class="btn btn-primary feature-action">Try Chat Assistant</button>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-feature="shortlist">
+                        <div class="feature-icon">
+                            <i class="fas fa-list-ul"></i>
+                        </div>
+                        <h3>Freelancer Comparison</h3>
+                        <p>Compare and evaluate multiple freelancers side-by-side before hiring.</p>
+                        <div class="feature-details hidden">
+                            <h4>Comparison Features:</h4>
+                            <ul>
+                                <li>Side-by-side comparison</li>
+                                <li>Evaluation metrics</li>
+                                <li>Hiring recommendations</li>
+                                <li>Detailed profiles</li>
+                            </ul>
+                            <button class="btn btn-primary feature-action">Compare Freelancers</button>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-feature="job-seeker">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Smart Job Seeker Posting</h3>
+                        <p>AI-powered job recommendations and intelligent filtering for optimal visibility.</p>
+                        <div class="feature-details hidden">
+                            <h4>Job Seeker Features:</h4>
+                            <ul>
+                                <li>AI-driven profile optimization</li>
+                                <li>Smart job matching</li>
+                                <li>Automated skill highlighting</li>
+                                <li>Performance analytics</li>
+                            </ul>
+                            <button class="btn btn-primary feature-action">Create Job Seeker Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Jobs Page -->
+        <section id="jobs" class="page-section table-section">
+            <div class="container">
+                <h2 class="section-title">Job Listings</h2>
+                
+                <!-- Client-specific tabs -->
+                <div class="tabs-container" id="client-tabs" style="display: none;">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="all-jobs">All Jobs</div>
+                        <div class="tab" data-tab="my-jobs">My Job Postings</div>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 id="jobs-table-title">Available Jobs</h3>
+                        <div class="search-box">
+                            <input type="text" id="job-search" placeholder="Search jobs...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <button class="btn btn-primary" id="add-job-btn" style="display: none;">Add New Job</button>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Job ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Budget</th>
+                                <th>Deadline</th>
+                                <th>Client</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="job-table-body">
+                            <!-- Jobs will be populated here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- Freelancers Page -->
+        <section id="freelancers" class="page-section table-section">
+            <div class="container">
+                <h2 class="section-title">Freelancer Profiles</h2>
+                
+                <!-- Client-specific tabs -->
+                <div class="tabs-container" id="freelancer-tabs" style="display: none;">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="all-freelancers">All Freelancers</div>
+                        <div class="tab" data-tab="shortlisted">Shortlisted</div>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Available Freelancers</h3>
+                        <div class="search-box">
+                            <input type="text" id="freelancer-search" placeholder="Search freelancers...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <button class="btn btn-primary" id="add-freelancer-btn" style="display: none;">Add Freelancer Profile</button>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Freelancer ID</th>
+                                <th>Name</th>
+                                <th>Skills</th>
+                                <th>Rating</th>
+                                <th>Hourly Rate</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="freelancer-table-body">
+                            <!-- Freelancers will be populated here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- Dashboard Page -->
+        <section id="dashboard" class="page-section">
+            <div class="container">
+                <h2 class="section-title">Dashboard</h2>
+                
+                <!-- Dashboard Tabs -->
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="overview">Overview</div>
+                        <div class="tab" data-tab="projects" id="projects-tab">Projects</div>
+                        <div class="tab" data-tab="goals" id="goals-tab">Goals & Progress</div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Content -->
+                <div class="dashboard-content">
+                    <!-- Overview Tab -->
+                    <div class="tab-content active" id="overview-content">
+                        <div class="dashboard-cards">
+                            <div class="dashboard-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Active Projects</h3>
+                                    <p class="card-value" id="active-projects-count">3</p>
+                                </div>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3 id="earnings-label">Earnings</h3>
+                                    <p class="card-value" id="earnings-value">$3,500</p>
+                                </div>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Rating</h3>
+                                    <p class="card-value" id="rating-value">4.7</p>
+                                </div>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Completed Projects</h3>
+                                    <p class="card-value" id="completed-projects-count">12</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-charts">
+                                <div class="chart-container">
+                                    <h3>Project Status</h3>
+                                    <canvas id="project-status-chart-canvas"></canvas>
+                                </div>
+                                <div class="chart-container">
+                                    <h3 id="earnings-chart-title">Earnings Overview</h3>
+                                    <canvas id="earnings-chart-canvas"></canvas>
+                                </div>
+                            </div>
+                            <div class="dashboard-recent">
+                                <h3>Recent Activity</h3>
+                                <div class="activity-list" id="activity-list">
+                                    <div class="activity-item">
+                                        <span class="activity-time">2 hrs ago</span>
+                                        <p>Freelancer <strong>John Doe</strong> submitted a proposal for <strong>Website Redesign</strong>.</p>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-time">5 hrs ago</span>
+                                        <p>Project <strong>Mobile App Development</strong> reached milestone 1.</p>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="activity-time">1 day ago</span>
+                                        <p>Client <strong>Sarah Johnson</strong> posted a new job: <strong>Logo Design</strong>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    <!-- Projects Tab -->
+                    <div class="tab-content" id="projects-content">
+                        <div class="table-container">
+                            <div class="table-header">
+                                <h3>Project Tracking</h3>
+                                <div class="search-box">
+                                    <input type="text" id="project-search" placeholder="Search projects...">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                            </div>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Project ID</th>
+                                        <th>Title</th>
+                                        <th>Client/Freelancer</th>
+                                        <th>Status</th>
+                                        <th>Progress</th>
+                                        <th>Deadline</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="project-table-body">
+                                    <!-- Projects will be populated here by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Goals & Progress Tab -->
+                    <div class="tab-content" id="goals-content">
+                        <div class="goals-container">
+                            <div class="goal-card">
+                                <h3>Earnings Milestones</h3>
+                                <div class="goal-progress">
+                                    <div class="goal-info">
+                                        <span>$1,000</span>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 100%"></div>
+                                        </div>
+                                        <span>$3,500 / $1,000</span>
+                                    </div>
+                                </div>
+                                <div class="goal-progress">
+                                    <div class="goal-info">
+                                        <span>$5,000</span>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 70%"></div>
+                                        </div>
+                                        <span>$3,500 / $5,000</span>
+                                    </div>
+                                </div>
+                                <div class="goal-progress">
+                                    <div class="goal-info">
+                                        <span>$10,000</span>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 35%"></div>
+                                        </div>
+                                        <span>$3,500 / $10,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="goal-card">
+                                <h3>Skill Upgrades</h3>
+                                <div class="skill-list">
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span>JavaScript</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 85%"></div>
+                                            </div>
+                                            <span>Advanced</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span>React</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 75%"></div>
+                                            </div>
+                                            <span>Advanced</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <div class="skill-info">
+                                            <span>UI/UX Design</span>
+                                            <div class="progress-bar">
+                                                <div class="progress" style="width: 60%"></div>
+                                            </div>
+                                            <span>Intermediate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="goal-card">
+                                <h3>Repeat Clients</h3>
+                                <div class="client-list">
+                                    <div class="client-item">
+                                        <div class="client-avatar">AB</div>
+                                        <div class="client-info">
+                                            <span>Alex Brown</span>
+                                            <span>3 Projects</span>
+                                        </div>
+                                    </div>
+                                    <div class="client-item">
+                                        <div class="client-avatar">SJ</div>
+                                        <div class="client-info">
+                                            <span>Sarah Johnson</span>
+                                            <span>2 Projects</span>
+                                        </div>
+                                    </div>
+                                    <div class="client-item">
+                                        <div class="client-avatar">MD</div>
+                                        <div class="client-info">
+                                            <span>Mike Davis</span>
+                                            <span>1 Project</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Admin Dashboard Page -->
+        <section id="admin-dashboard" class="page-section">
+            <div class="container">
+                <h2 class="section-title">Admin Dashboard</h2>
+                
+                <!-- Dashboard Stats -->
+                <div class="dashboard-cards admin-stats">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Users</h3>
+                            <p class="card-value" id="total-users-card">0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Clients</h3>
+                            <p class="card-value" id="total-clients-card">0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Freelancers</h3>
+                            <p class="card-value" id="total-freelancers-card">0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Freelancer Earnings</h3>
+                            <p class="card-value" id="total-freelancer-earnings-card">$0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Platform Income</h3>
+                            <p class="card-value" id="platform-income-card">$0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Jobs</h3>
+                            <p class="card-value" id="total-jobs-card">0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Active Jobs</h3>
+                            <p class="card-value" id="active-jobs-card">0</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Completed Projects</h3>
+                            <p class="card-value" id="completed-projects-card">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Charts -->
+                <div class="dashboard-charts admin-charts">
+                    <div class="chart-container">
+                        <h3>User Distribution</h3>
+                        <canvas id="user-distribution-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Earnings Distribution</h3>
+                        <canvas id="earnings-distribution-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Job Status</h3>
+                        <canvas id="job-status-chart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div class="dashboard-recent">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="admin-activity-list">
+                        <!-- Activities will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Login to Your Account</h3>
+                <button class="close-btn" id="close-login-modal">&times;</button>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="remember-me"> Remember me
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="#" class="btn btn-secondary" id="forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create Your Account</h3>
+                <button class="close-btn" id="close-register-modal">&times;</button>
+            </div>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-name">Full Name</label>
+                    <input type="text" id="register-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-role">I am a</label>
+                    <select id="register-role" class="form-control" required>
+                        <option value="">Select Role</option>
+                        <option value="freelancer">Freelancer</option>
+                        <option value="client">Client</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-register">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Add/Edit Job Modal -->
+    <div id="job-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="job-modal-title">Add New Job</h3>
+                <button class="close-btn" id="close-job-modal">&times;</button>
+            </div>
+            <form id="job-form">
+                <input type="hidden" id="job-id">
+                <div class="form-group">
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="job-description">Description</label>
+                    <textarea id="job-description" class="form-control" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="job-budget">Budget ($)</label>
+                    <input type="number" id="job-budget" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="job-deadline">Deadline</label>
+                    <input type="date" id="job-deadline" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="job-skills">Required Skills (comma separated)</label>
+                    <input type="text" id="job-skills" class="form-control" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Job</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-job">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Add/Edit Freelancer Modal -->
+    <div id="freelancer-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="freelancer-modal-title">Add Freelancer Profile</h3>
+                <button class="close-btn" id="close-freelancer-modal">&times;</button>
+            </div>
+            <form id="freelancer-form">
+                <input type="hidden" id="freelancer-id">
+                <div class="form-group">
+                    <label for="freelancer-name">Name</label>
+                    <input type="text" id="freelancer-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="freelancer-email">Email</label>
+                    <input type="email" id="freelancer-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="freelancer-skills">Skills (comma separated)</label>
+                    <input type="text" id="freelancer-skills" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="freelancer-rate">Hourly Rate ($)</label>
+                    <input type="number" id="freelancer-rate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="freelancer-experience">Experience (years)</label>
+                    <input type="number" id="freelancer-experience" class="form-control" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Profile</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-freelancer">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Job Proposal Modal -->
+    <div id="proposal-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Submit Proposal</h3>
+                <button class="close-btn" id="close-proposal-modal">&times;</button>
+            </div>
+            <form id="proposal-form">
+                <input type="hidden" id="proposal-job-id">
+                <div class="form-group">
+                    <label for="proposal-cover-letter">Cover Letter</label>
+                    <textarea id="proposal-cover-letter" class="form-control" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="proposal-rate">Your Rate ($)</label>
+                    <input type="number" id="proposal-rate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="proposal-estimate">Estimated Time (days)</label>
+                    <input type="number" id="proposal-estimate" class="form-control" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Proposal</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-proposal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Feature Demo Modal -->
+    <div id="feature-demo-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="feature-demo-title">Feature Demo</h3>
+                <button class="close-btn" id="close-feature-demo-modal">&times;</button>
+            </div>
+            <div id="feature-demo-content">
+                <!-- Feature demo content will be loaded here -->
+            </div>
+        </div>
+    </div>
+    <!-- Support Chat Modal -->
+    <div id="support-chat-modal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Support Chat</h3>
+                <button class="close-btn" id="close-support-chat-modal">&times;</button>
+            </div>
+            <div class="chat-container" id="support-chat-container">
+                <div class="chat-message bot">
+                    <p>Hello! I'm your AI assistant. How can I help you today?</p>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="support-chat-input" class="chat-input" placeholder="Type your message...">
+                <button class="btn btn-primary" id="support-chat-send">Send</button>
+            </div>
+        </div>
+    </div>
+    <!-- Freelancer Comparison Modal -->
+    <div id="comparison-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Compare Freelancers</h3>
+                <button class="close-btn" id="close-comparison-modal">&times;</button>
+            </div>
+            <div class="comparison-container" id="comparison-container">
+                <!-- Comparison content will be loaded here -->
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/crud.js"></script>
+    <script src="js/features.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Dummy Project Status Chart
+        const ctx1 = document.getElementById('project-status-chart-canvas');
+        if (ctx1) {
+            new Chart(ctx1, {
+                type: 'pie',
+                data: {
+                    labels: ['Active', 'Completed', 'Pending'],
+                    datasets: [{
+                        data: [3, 12, 2],
+                        backgroundColor: ['#3498db', '#2ecc71', '#f1c40f']
+                    }]
+                }
+            });
+        }
+        // Dummy Earnings Chart
+        const ctx2 = document.getElementById('earnings-chart-canvas');
+        if (ctx2) {
+            new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                    datasets: [{
+                        label: 'Earnings ($)',
+                        data: [500, 1200, 900, 1500, 1800],
+                        borderColor: '#2ecc71',
+                        fill: false,
+                        tension: 0.3
+                    }]
+                }
+            });
+        }
+    </script>
+</body>
+</html>
